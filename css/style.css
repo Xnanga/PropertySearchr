@@ -1,0 +1,111 @@
+:root {
+  --default-font-style: "Roboto", sans-serif;
+  --primary-color-cyan: #0099ff;
+  --secondary-color-black: #000;
+  --secondary-color-grey: #4d4d4d;
+  --secondary-color-white: #fff; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: var(--default-font-style);
+  color: var(--secondary-color-grey); }
+
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none; }
+
+input:focus {
+  outline: none; }
+
+.search {
+  margin: 1.5rem 0; }
+  .search__options {
+    padding: 1.5rem 0;
+    transition: all 0.5s; }
+  .search__option-tab {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer; }
+    .search__option-tab--active {
+      border-bottom: 3px solid var(--primary-color-cyan); }
+  .search__widget {
+    padding: 1.5rem 0; }
+    .search__widget__property {
+      display: flex;
+      align-items: baseline; }
+      .search__widget__property > .btn-cyan {
+        margin-left: 1rem; }
+    .search__widget__agent {
+      display: flex;
+      align-items: baseline; }
+      .search__widget__agent > .btn-cyan {
+        margin-left: 1rem; }
+    .search__widget__input {
+      height: 6rem;
+      width: 30rem;
+      padding-left: 1rem;
+      font-size: 3rem; }
+
+button {
+  cursor: pointer;
+  transition: all 0.1s; }
+
+.btn-cyan {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 1.5rem;
+  background-color: var(--primary-color-cyan);
+  color: var(--secondary-color-white); }
+  .btn-cyan:hover {
+    background-color: #008ae6; }
+
+.page-container {
+  height: 100%;
+  padding: 4rem; }
+
+.main-content {
+  height: 150rem; }
+
+.homepage-header {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--secondary-color-black);
+  color: var(--secondary-color-white); }
+  .homepage-header__content {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    z-index: 10;
+    max-width: 65rem; }
+    .homepage-header__content__h1 {
+      font-size: 4.5rem; }
+    .homepage-header__content__tagline {
+      font-size: 2rem;
+      font-weight: 700; }
+    .homepage-header__content__social-proof-logos {
+      width: 120%; }
+  .homepage-header__slider {
+    display: flex;
+    justify-items: flex-start;
+    height: 100%; }
+  .homepage-header__slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: all 1s ease-in-out; }

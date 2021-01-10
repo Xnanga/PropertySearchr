@@ -1,0 +1,80 @@
+.main-nav {
+}
+
+.social-proof-logos {
+}
+
+// Search Widget
+
+.search {
+  margin: 1.5rem 0;
+
+  &__options {
+    padding: 1.5rem 0;
+
+    transition: all 0.5s;
+  }
+
+  &__option-tab {
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    padding: 0.5rem 0.5rem;
+
+    cursor: pointer;
+
+    &--active {
+      border-bottom: 3px solid var(--primary-color-cyan);
+    }
+  }
+
+  &__widget {
+    padding: 1.5rem 0;
+
+    &__property {
+      display: flex;
+      align-items: baseline;
+
+      & > .btn-cyan {
+        margin-left: 1rem;
+      }
+    }
+
+    &__agent {
+      display: flex;
+      align-items: baseline;
+
+      & > .btn-cyan {
+        margin-left: 1rem;
+      }
+    }
+
+    &__input {
+      height: 6rem;
+      width: 30rem;
+      padding-left: 1rem;
+
+      font-size: 3rem;
+    }
+  }
+}
+
+// Buttons
+
+button {
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.btn-cyan {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 1.5rem;
+
+  background-color: var(--primary-color-cyan);
+  color: var(--secondary-color-white);
+
+  &:hover {
+    background-color: darken(#0099ff, 5%);
+  }
+}
