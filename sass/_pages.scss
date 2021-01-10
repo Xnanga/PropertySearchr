@@ -8,7 +8,7 @@
 
   &__content {
     position: absolute;
-    top: 30%;
+    top: 17.5%;
     left: 15%;
     z-index: 10;
 
@@ -16,6 +16,7 @@
 
     &__h1 {
       font-size: 4.5rem;
+      margin-bottom: 2rem;
     }
 
     &__tagline {
@@ -36,11 +37,11 @@
   }
 
   &__slide {
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.6;
 
     transition: all 1s ease-in-out;
   }
