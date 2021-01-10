@@ -148,7 +148,7 @@ button {
   color: var(--secondary-color-white); }
   .homepage-header__content {
     position: absolute;
-    top: 27.5vh;
+    top: 25vh;
     left: 15%;
     z-index: 10;
     max-width: 65rem; }
