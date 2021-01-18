@@ -8,6 +8,10 @@ const propertySearchWidget = document.querySelector(
   ".search__widget__property"
 );
 const agentSearchWidget = document.querySelector(".search__widget__agent");
+const navContainer = document.querySelector(".nav-container");
+const homepageHeader = document.querySelector(".homepage-header");
+
+const sectionOne = document.querySelector(".section--1");
 
 // Init
 
@@ -19,6 +23,25 @@ const init = function () {
   // Set Elements on Page Load
   tabs[0].classList.add("search__option-tab--active");
 };
+
+// Nav Resizing
+
+// const resizingNav = function (entries) {
+//   const [entry] = entries;
+//   if (entry.isIntersecting) {
+//     navContainer.classList.add("nav-container--scrolled");
+//   } else {
+//     navContainer.classList.remove("nav-container--scrolled");
+//   }
+// };
+
+// const navObserver = new IntersectionObserver(resizingNav, {
+//   root: null,
+//   threshold: 0.3,
+// });
+
+// console.log(sectionOne);
+// navObserver.observe(sectionOne);
 
 // Homepage Hero Image Slider
 

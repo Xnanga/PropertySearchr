@@ -9,6 +9,7 @@
   --secondary-color-black: #000;
   --secondary-color-grey: #4d4d4d;
   --secondary-color-white: #fff;
+  --secondary-color-offwhite: #f1f1f2;
 }
 
 // Reset
@@ -29,6 +30,7 @@ body {
   box-sizing: border-box;
   font-family: var(--default-font-style);
   color: var(--secondary-color-grey);
+  margin: 4rem;
 }
 
 button {
@@ -46,7 +48,35 @@ input {
   }
 }
 
+ul {
+  list-style: none;
+}
+
 // Typography
 
 h1 {
+}
+
+h2 {
+  font-size: 3.5rem;
+  color: var(--secondary-color-grey);
+  margin-bottom: 1rem;
+}
+
+ul li::before {
+  content: "\25A0"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--primary-color-cyan); /* Change the color */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.header-tagline {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--secondary-color-grey);
+}
+
+.blue-text {
+  color: var(--primary-color-cyan);
 }

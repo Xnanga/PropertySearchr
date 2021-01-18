@@ -1,14 +1,24 @@
 // Navigation
 
-.nav {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+.nav-container {
+  @include flexCentering;
 
+  position: fixed;
+  z-index: 20;
+
+  padding: 3rem;
+
+  transition: all 0.5s ease-out;
+
+  &--scrolled {
+    top: 0;
+    padding: 0;
+  }
+}
+
+.nav {
   height: 7rem;
-  width: 95%;
+  width: 100%;
 
   display: grid;
   grid-template-columns: 10rem 25rem minmax(2rem, 75rem) repeat(8, auto); // 11 in total
@@ -148,6 +158,77 @@
   }
 }
 
+// Postcode Searchbar
+
+.postcode-searchbar {
+  display: flex;
+
+  &__input {
+    width: 75%;
+    height: 4rem;
+    padding-left: 1rem;
+    font-size: 3rem;
+  }
+
+  &__btn {
+    @include flexCentering;
+    background-color: var(--secondary-color-black);
+    color: var(--secondary-color-white);
+
+    font-size: 2rem;
+
+    min-width: 15rem;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--secondary-color-white);
+
+    margin-left: 0.75rem;
+  }
+}
+
+// Highlight Widgets
+
+.highlight {
+  @include flexCentering;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 25rem;
+  padding: 2rem;
+
+  &--1 {
+  }
+
+  &--2 {
+  }
+
+  &--3 {
+  }
+
+  &--4 {
+  }
+
+  &__icon {
+    fill: var(--primary-color-cyan);
+    height: 10rem;
+    width: 10rem;
+  }
+
+  &__number {
+    color: var(--secondary-color-black);
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  &__tagline {
+    color: var(--secondary-color-grey);
+    font-size: 1.75rem;
+  }
+}
+
 // Buttons
 
 button {
@@ -165,5 +246,17 @@ button {
 
   &:hover {
     background-color: darken(#0099ff, 5%);
+  }
+}
+
+// Bullet List
+
+.bullet-list {
+  list-style-type: square;
+
+  line-height: 3;
+  font-size: 1.75rem;
+
+  &__item {
   }
 }

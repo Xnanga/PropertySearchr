@@ -1,9 +1,102 @@
 .page-container {
-  height: 100%;
-  padding: 4rem;
 }
 
 .main-content {
   position: relative;
-  height: 150rem;
+}
+
+.small-section {
+  height: 60vh;
+}
+
+.large-section {
+  height: 80vh;
+}
+
+.highlights-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__text-content {
+    @include flexCentering;
+    flex-direction: column;
+
+    height: 40%;
+  }
+
+  &__highlights {
+    height: 60%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+}
+
+.people-section {
+  position: relative;
+  background-color: var(--secondary-color-offwhite);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__content {
+    position: static;
+    z-index: 10;
+
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding-left: 20rem;
+  }
+
+  &__search {
+    position: static;
+    z-index: 10;
+
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    height: 80%;
+    //width: 30%;
+    object-fit: contain;
+  }
+}
+
+.about-section {
+  background-color: brown;
+}
+
+.properties-section {
+  background-color: pink;
+}
+
+.join-us-section {
+  background-color: crimson;
+}
+
+.testimonials-section {
+  background-color: yellowgreen;
+}
+
+.footer {
+  background-color: darkblue;
+  height: 50vh;
 }
