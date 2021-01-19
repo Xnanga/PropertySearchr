@@ -33,13 +33,19 @@ button {
 input:focus {
   outline: none; }
 
-ul {
-  list-style: none; }
+ul li {
+  list-style-type: none; }
 
 h2 {
   font-size: 3.5rem;
   color: var(--secondary-color-grey);
   margin-bottom: 1rem; }
+
+p {
+  font-size: 1.6rem;
+  color: var(--secondary-color-grey);
+  margin: 1.5rem 0;
+  line-height: 1.5; }
 
 ul li::before {
   content: "\25A0";
@@ -51,11 +57,12 @@ ul li::before {
   width: 1em;
   /* Also needed for space (tweak if needed) */
   margin-left: -1em;
-  /* Also needed for space (tweak if needed) */ }
+  /* Also needed for space (tweak if needed) */
+  font-size: 2rem; }
 
 .header-tagline {
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   color: var(--secondary-color-grey); }
 
 .blue-text {
@@ -63,6 +70,9 @@ ul li::before {
 
 .margin-left-small {
   margin-left: 2rem; }
+
+.margin-bottom-small {
+  margin-bottom: 2rem; }
 
 .nav-container {
   display: flex;
@@ -163,7 +173,7 @@ ul li::before {
 .postcode-searchbar {
   display: flex; }
   .postcode-searchbar__input {
-    width: 75%;
+    width: 60%;
     height: 4rem;
     padding-left: 1rem;
     font-size: 3rem; }
@@ -175,6 +185,10 @@ ul li::before {
     color: var(--secondary-color-white);
     font-size: 2rem;
     min-width: 15rem; }
+    .postcode-searchbar__btn:hover {
+      transform: scale(1.1); }
+    .postcode-searchbar__btn:active {
+      transform: scale(0.95); }
   .postcode-searchbar__icon {
     height: 2rem;
     width: 2rem;
@@ -223,21 +237,35 @@ button {
   position: relative; }
 
 .small-section {
-  height: 60vh; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0;
+  min-height: 60vh; }
 
 .large-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0;
   height: 80vh; }
 
 .highlights-section {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .highlights-section__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%; }
   .highlights-section__text-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 40%; }
+    height: 40%;
+    margin-bottom: 5rem; }
   .highlights-section__highlights {
     height: 60%;
     width: 100%;
@@ -251,7 +279,8 @@ button {
   background-color: var(--secondary-color-offwhite);
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
   .people-section__content {
     position: static;
     z-index: 10;
@@ -269,18 +298,36 @@ button {
     flex-direction: column;
     justify-content: space-between; }
   .people-section__image {
+    display: inline-block;
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 1;
-    height: 80%;
-    object-fit: contain; }
+    height: auto;
+    max-width: 100%;
+    object-fit: scale-down;
+    vertical-align: bottom; }
 
 .about-section {
-  background-color: brown; }
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .about-section__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%; }
+  .about-section__para {
+    display: inline-block;
+    text-align: center; }
 
 .properties-section {
-  background-color: pink; }
+  background-color: var(--secondary-color-offwhite); }
+  .properties-section__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
 
 .join-us-section {
   background-color: crimson; }

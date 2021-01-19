@@ -48,8 +48,8 @@ input {
   }
 }
 
-ul {
-  list-style: none;
+ul li {
+  list-style-type: none;
 }
 
 // Typography
@@ -63,17 +63,25 @@ h2 {
   margin-bottom: 1rem;
 }
 
+p {
+  font-size: 1.6rem;
+  color: var(--secondary-color-grey);
+  margin: 1.5rem 0;
+  line-height: 1.5;
+}
+
 ul li::before {
   content: "\25A0"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: var(--primary-color-cyan); /* Change the color */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
+  font-size: 2rem;
 }
 
 .header-tagline {
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   color: var(--secondary-color-grey);
 }
 
