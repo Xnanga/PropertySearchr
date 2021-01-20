@@ -85,6 +85,16 @@ ul li::before {
   color: var(--secondary-color-grey);
 }
 
+.span-text {
+  font-size: 1.5rem;
+}
+
 .blue-text {
   color: var(--primary-color-cyan);
+}
+
+.property-status-text {
+  color: var(--primary-color-cyan);
+  font-size: 2rem;
+  font-weight: 700;
 }

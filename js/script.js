@@ -11,6 +11,7 @@ const agentSearchWidget = document.querySelector(".search__widget__agent");
 const navContainer = document.querySelector(".nav-container");
 const homepageHeader = document.querySelector(".homepage-header");
 
+const allSections = document.querySelectorAll("section");
 const sectionOne = document.querySelector(".section--1");
 
 // Init
@@ -42,6 +43,25 @@ const init = function () {
 
 // console.log(sectionOne);
 // navObserver.observe(sectionOne);
+
+// Section Reveal on Scroll
+
+const revealSection = function (entries) {
+  const [entry] = entries;
+
+  if (entry.isIntersecting) {
+    const intersectingSection = entry.target;
+    intersectingSection.style.opacity = "1.0";
+    sectionObserver.unobserve(intersectingSection);
+  }
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.5,
+});
+
+allSections.forEach((section) => sectionObserver.observe(section));
 
 // Homepage Hero Image Slider
 

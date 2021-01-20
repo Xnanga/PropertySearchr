@@ -65,14 +65,25 @@ ul li::before {
   margin: 1.5rem 0;
   color: var(--secondary-color-grey); }
 
+.span-text {
+  font-size: 1.5rem; }
+
 .blue-text {
   color: var(--primary-color-cyan); }
+
+.property-status-text {
+  color: var(--primary-color-cyan);
+  font-size: 2rem;
+  font-weight: 700; }
 
 .margin-left-small {
   margin-left: 2rem; }
 
 .margin-bottom-small {
   margin-bottom: 2rem; }
+
+.transparent {
+  opacity: 0; }
 
 .nav-container {
   display: flex;
@@ -215,6 +226,62 @@ ul li::before {
     color: var(--secondary-color-grey);
     font-size: 1.75rem; }
 
+.property-slider {
+  display: flex;
+  justify-items: flex-start;
+  width: 90%;
+  overflow: hidden; }
+  .property-slider__container {
+    display: flex;
+    justify-items: flex-start; }
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color-white);
+  width: 32rem;
+  height: 40rem; }
+  .property-card:not(:first-child) {
+    margin-left: 1.5rem; }
+  .property-card__img-container {
+    position: relative;
+    height: 20rem;
+    overflow: hidden; }
+  .property-card__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+  .property-card__rooms-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 7.5rem;
+    width: 7.5rem;
+    background-color: var(--secondary-color-black);
+    color: var(--secondary-color-white);
+    opacity: 0.9; }
+  .property-card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding: 1.5rem; }
+  .property-card__action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 1rem;
+    background-color: var(--primary-color-cyan);
+    color: var(--secondary-color-white);
+    font-size: 1.5rem;
+    font-weight: 700; }
+    .property-card__action-bar__more-details {
+      text-align: right; }
+
 button {
   cursor: pointer;
   transition: all 0.1s; }
@@ -241,14 +308,16 @@ button {
   flex-direction: column;
   justify-content: center;
   padding: 5rem 0;
-  min-height: 60vh; }
+  min-height: 60vh;
+  transition: all 0.3s; }
 
 .large-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 5rem 0;
-  height: 80vh; }
+  height: 80vh;
+  transition: all 0.5s; }
 
 .highlights-section {
   display: flex;
