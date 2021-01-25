@@ -14,11 +14,19 @@ const homepageHeader = document.querySelector(".homepage-header");
 const allSections = document.querySelectorAll("section");
 const sectionOne = document.querySelector(".section--1");
 
+const propertySlider = document.querySelector(".property-slider");
 const propertySliderLeftBtn = document.querySelector(
   ".property-slider__btn--left"
 );
 const propertySliderRightBtn = document.querySelector(
   ".property-slider__btn--right"
+);
+const propertySliderCards = document.querySelectorAll(".property-card");
+const propertySliderContainer = document.querySelector(
+  ".property-slider__container"
+);
+const propertySliderBTNContainer = document.querySelector(
+  ".property-slider__btn-container"
 );
 
 // Init
@@ -26,7 +34,7 @@ const propertySliderRightBtn = document.querySelector(
 const init = function () {
   // Functions on Page Load
   homepageSlider();
-  propertySlider();
+  propertySliderMovement();
   manageTabs("1");
   hideSections();
 
@@ -110,47 +118,58 @@ const homepageSlider = function () {
   const slideTimer = setInterval(nextSlide, 6000);
 };
 
-// Homepage Property Card Slider
+const propertySliderMovement = function () {
+  let index = 0;
+  const maxSlide = propertySliderCards.length / 5;
 
-const propertySlider = function () {
-  const propertyCardSlides = document.querySelectorAll(".property-card");
+  let sliderWidth = propertySlider.offsetWidth;
 
-  let currentSlide = 0;
-  const maxSlide = propertyCardSlides.length;
-  const minSlide = 0;
+  window.addEventListener("resize", () => {
+    sliderWidth = propertySlider.offsetWidth;
+  });
 
   const goToSlide = function (slide, direction) {
     if (direction === "next") {
-      propertyCardSlides.forEach(function (s, i) {
-        s.style.transform = `translateX(-${100 * slide}%)`;
-      });
+      propertySliderContainer.style.transform = `translateX(-${
+        index * sliderWidth
+      }px)`;
     } else if (direction === "prev") {
-      propertyCardSlides.forEach(function (s, i) {
-        s.style.transform = `translateX(-${100 * slide}%)`;
-      });
+      propertySliderContainer.style.transform = `translateX(-${
+        index * sliderWidth
+      }px)`;
     }
   };
 
   const nextSlide = function () {
-    if (currentSlide === maxSlide - 5) {
+    if (index) {
       return;
     } else {
-      currentSlide++;
+      index++;
     }
-    goToSlide(currentSlide, "next");
+    goToSlide(index, "next");
   };
 
   const prevSlide = function () {
-    if (currentSlide === minSlide) {
+    if (index === 0) {
       return;
     } else {
-      currentSlide--;
+      index--;
     }
-    goToSlide(currentSlide, "prev");
+    goToSlide(index, "prev");
   };
 
-  propertySliderRightBtn.addEventListener("click", nextSlide);
-  propertySliderLeftBtn.addEventListener("click", prevSlide);
+  const slideHandler = function (direction) {
+    const buttonPressed = direction.target;
+    if (buttonPressed === propertySliderBTNContainer) {
+      return;
+    } else if (buttonPressed === propertySliderLeftBtn) {
+      prevSlide();
+    } else if (buttonPressed === propertySliderRightBtn) {
+      nextSlide();
+    }
+  };
+
+  propertySliderBTNContainer.addEventListener("click", slideHandler);
 };
 
 // Homepage Header Tabs

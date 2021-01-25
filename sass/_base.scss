@@ -42,6 +42,10 @@ button {
   background: none;
 }
 
+button > * {
+  pointer-events: none;
+}
+
 input {
   &:focus {
     outline: none;

@@ -244,6 +244,7 @@
   justify-items: flex-start;
 
   width: 90%;
+  height: 45rem;
 
   overflow: hidden;
 
@@ -252,6 +253,8 @@
     justify-items: flex-start;
 
     margin: 3rem 0;
+
+    transition: all 1s;
   }
 
   &__btn-container {
@@ -260,9 +263,15 @@
   }
 
   &__btn {
-    background-color: var(--primary-color-cyan);
-    color: white;
+    @include flexCentering;
+
     margin: 0.5rem;
+
+    &__arrow {
+      height: 3rem;
+      width: 3rem;
+      cursor: pointer;
+    }
 
     &--left {
     }
@@ -283,10 +292,6 @@
   transition: all 0.4s ease-in-out;
 
   margin: 0 1rem;
-
-  &:not(:first-child) {
-    //margin-left: 1.5rem;
-  }
 
   &__img-container {
     position: relative;
