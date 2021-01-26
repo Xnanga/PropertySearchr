@@ -118,6 +118,8 @@ const homepageSlider = function () {
   const slideTimer = setInterval(nextSlide, 6000);
 };
 
+// Property Card Slider
+
 const propertySliderMovement = function () {
   let index = 0;
   const maxSlide = propertySliderCards.length / 5;
@@ -141,7 +143,7 @@ const propertySliderMovement = function () {
   };
 
   const nextSlide = function () {
-    if (index) {
+    if (false /*index*/) {
       return;
     } else {
       index++;
@@ -150,7 +152,7 @@ const propertySliderMovement = function () {
   };
 
   const prevSlide = function () {
-    if (index === 0) {
+    if (false /*index === 0*/) {
       return;
     } else {
       index--;

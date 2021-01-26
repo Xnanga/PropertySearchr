@@ -144,11 +144,18 @@
 }
 
 .join-us-section {
-  background-color: crimson;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .testimonials-section {
-  background-color: yellowgreen;
+  @include flexCentering;
+
+  background: url("../images/homepage/testimonial-slider-bg-1.jpg");
+  // filter: grayscale(100%);
 }
 
 .footer {
