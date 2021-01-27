@@ -545,7 +545,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("../images/homepage/testimonial-slider-bg-1.jpg"); }
+  background: url("../images/homepage/testimonial-slider-bg-1.jpg") no-repeat;
+  background-size: cover; }
 
 .footer {
   background-color: darkblue;
