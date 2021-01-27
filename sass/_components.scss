@@ -470,7 +470,7 @@
   background-color: var(--secondary-color-white);
 
   width: 75rem;
-  height: 25rem;
+  height: 27.5rem;
   padding: 1rem;
 
   font-size: 1.75rem;
@@ -489,15 +489,29 @@
   }
 
   &__box {
+    position: relative;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     height: 100%;
   }
 
   &__content {
+    position: absolute;
+    top: 0;
+
     padding: 2.5rem;
+
+    opacity: 1;
+
+    transition: all 0.4s;
+
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 
   &__testimonial {

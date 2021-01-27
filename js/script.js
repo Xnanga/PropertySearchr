@@ -29,14 +29,23 @@ const propertySliderBTNContainer = document.querySelector(
   ".property-slider__btn-container"
 );
 
+const allTestimonials = document.querySelectorAll(
+  ".testimonials-slider__content"
+);
+const testimonialsDotContainer = document.querySelector(
+  ".testimonials-slider__dots"
+);
+
 // Init
 
 const init = function () {
   // Functions on Page Load
   homepageSlider();
   propertySliderMovement();
+  testimonialsSlider();
   manageTabs("1");
   hideSections();
+  hideTestimonials();
 
   // Set Elements on Page Load
   tabs[0].classList.add("search__option-tab--active");
@@ -172,6 +181,53 @@ const propertySliderMovement = function () {
   };
 
   propertySliderBTNContainer.addEventListener("click", slideHandler);
+};
+
+// Hide Testimonials on Load (Except First)
+
+const hideTestimonials = function () {
+  allTestimonials.forEach((testimonial) =>
+    testimonial.classList.add("testimonials-slider__content--hidden")
+  );
+
+  allTestimonials[0].classList.remove("testimonials-slider__content--hidden");
+};
+
+// Testimonials Slider
+
+const testimonialsSlider = function () {
+  const dotHTML = `<div class="testimonials-slider__single-dot"></div>`;
+  let allDots;
+
+  allTestimonials.forEach(function () {
+    testimonialsDotContainer.insertAdjacentHTML("beforeend", dotHTML);
+    allDots = document.querySelectorAll(".testimonials-slider__single-dot");
+  });
+
+  allDots[0].classList.add("testimonials-slider__single-dot--active");
+
+  const dotSelector = function (e) {
+    if (e.target === testimonialsDotContainer) return;
+
+    const allDotsArr = [...allDots];
+    const clickedDot = e.target;
+    const dotNumber = allDotsArr.indexOf(clickedDot);
+    console.log(dotNumber);
+
+    allTestimonials.forEach((testimonial) =>
+      testimonial.classList.add("testimonials-slider__content--hidden")
+    );
+    allDots.forEach((dot) =>
+      dot.classList.remove("testimonials-slider__single-dot--active")
+    );
+
+    allTestimonials[dotNumber].classList.remove(
+      "testimonials-slider__content--hidden"
+    );
+    allDots[dotNumber].classList.add("testimonials-slider__single-dot--active");
+  };
+
+  testimonialsDotContainer.addEventListener("click", dotSelector);
 };
 
 // Homepage Header Tabs

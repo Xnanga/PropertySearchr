@@ -379,7 +379,7 @@ ul li::before {
   position: relative;
   background-color: var(--secondary-color-white);
   width: 75rem;
-  height: 25rem;
+  height: 27.5rem;
   padding: 1rem;
   font-size: 1.75rem; }
   .testimonials-slider::before {
@@ -392,12 +392,20 @@ ul li::before {
     font-family: Georgia, serif;
     color: var(--primary-color-cyan); }
   .testimonials-slider__box {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100%; }
   .testimonials-slider__content {
-    padding: 2.5rem; }
+    position: absolute;
+    top: 0;
+    padding: 2.5rem;
+    opacity: 1;
+    transition: all 0.4s; }
+    .testimonials-slider__content--hidden {
+      visibility: hidden;
+      opacity: 0; }
   .testimonials-slider__name {
     padding: 2rem 0;
     font-weight: 700; }
@@ -547,6 +555,8 @@ button {
   justify-content: center;
   background: url("../images/homepage/testimonial-slider-bg-1.jpg") no-repeat;
   background-size: cover; }
+  .testimonials-section__container {
+    height: 100%; }
 
 .footer {
   background-color: darkblue;

@@ -158,6 +158,10 @@
   background-size: cover;
   // Background above needs
   // filter: grayscale(100%);
+
+  &__container {
+    height: 100%;
+  }
 }
 
 .footer {
