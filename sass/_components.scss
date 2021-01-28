@@ -469,9 +469,10 @@
 
   background-color: var(--secondary-color-white);
 
-  width: 75rem;
-  height: 27.5rem;
+  width: 40%;
+  height: 100%;
   padding: 1rem;
+  margin: 0 auto;
 
   font-size: 1.75rem;
 
@@ -501,6 +502,8 @@
   &__content {
     position: absolute;
     top: 0;
+    height: 100%;
+    width: 100%;
 
     padding: 2.5rem;
 

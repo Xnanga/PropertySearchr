@@ -6,6 +6,8 @@
   background-color: var(--secondary-color-black);
   color: var(--secondary-color-white);
 
+  border-bottom: 2px solid var(--primary-color-cyan);
+
   &__content {
     position: absolute;
     top: 4%;

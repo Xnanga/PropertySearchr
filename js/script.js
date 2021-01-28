@@ -199,31 +199,42 @@ const testimonialsSlider = function () {
   const dotHTML = `<div class="testimonials-slider__single-dot"></div>`;
   let allDots;
 
-  allTestimonials.forEach(function () {
-    testimonialsDotContainer.insertAdjacentHTML("beforeend", dotHTML);
-    allDots = document.querySelectorAll(".testimonials-slider__single-dot");
-  });
+  const createDots = function () {
+    allTestimonials.forEach(function () {
+      testimonialsDotContainer.insertAdjacentHTML("beforeend", dotHTML);
+      allDots = document.querySelectorAll(".testimonials-slider__single-dot");
+    });
 
-  allDots[0].classList.add("testimonials-slider__single-dot--active");
+    allDots[0].classList.add("testimonials-slider__single-dot--active");
+  };
+
+  createDots();
 
   const dotSelector = function (e) {
-    if (e.target === testimonialsDotContainer) return;
-
     const allDotsArr = [...allDots];
     const clickedDot = e.target;
     const dotNumber = allDotsArr.indexOf(clickedDot);
-    console.log(dotNumber);
 
+    if (clickedDot === testimonialsDotContainer) return;
+
+    switchTestimonials(dotNumber);
+    switchDots(dotNumber);
+  };
+
+  const switchTestimonials = function (dotNumber) {
     allTestimonials.forEach((testimonial) =>
       testimonial.classList.add("testimonials-slider__content--hidden")
     );
+    allTestimonials[dotNumber].classList.remove(
+      "testimonials-slider__content--hidden"
+    );
+  };
+
+  const switchDots = function (dotNumber) {
     allDots.forEach((dot) =>
       dot.classList.remove("testimonials-slider__single-dot--active")
     );
 
-    allTestimonials[dotNumber].classList.remove(
-      "testimonials-slider__content--hidden"
-    );
     allDots[dotNumber].classList.add("testimonials-slider__single-dot--active");
   };
 
