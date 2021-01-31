@@ -157,6 +157,7 @@
 
   background: url("../images/homepage/testimonial-slider-bg-1.jpg") no-repeat;
   background-size: cover;
+  background-position: bottom;
 
   // filter: grayscale(100%);
 
@@ -225,10 +226,17 @@
     }
 
     &__list-item {
-      cursor: pointer;
-
       &::before {
         content: "";
+      }
+    }
+
+    &__social-container {
+      display: flex;
+      justify-content: flex-start;
+
+      & > img:not(:first-child) {
+        margin-left: 1.5rem;
       }
     }
   }

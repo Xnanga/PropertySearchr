@@ -106,6 +106,45 @@
   }
 }
 
+// Background Nav
+
+.background-nav {
+  position: absolute;
+  top: 0;
+  right: 4rem;
+
+  width: 32rem;
+  height: 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 1.5rem;
+
+  &__social-links {
+    & > img {
+      height: 2.5rem;
+      width: 2.5rem;
+
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+// Background Square
+
+.background-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17.18rem;
+  height: 14.18rem;
+  background-color: var(--primary-color-cyan);
+}
+
 // Search Widget
 
 .search {
@@ -584,4 +623,10 @@ button {
 
   &__item {
   }
+}
+
+// Social Icons
+
+.social-icon {
+  cursor: pointer;
 }
