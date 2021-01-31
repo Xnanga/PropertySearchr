@@ -1,21 +1,21 @@
 // Navigation
 
 .nav-container {
-  @include flexCentering;
-
-  position: fixed;
+  position: absolute;
   z-index: 20;
 
-  padding: 3rem;
+  width: 100%;
 
-  transition: all 0.5s ease-out;
+  transition: width 1s position 2s;
 
   top: 0;
-  padding: 0;
+  padding: 3rem;
 
   &--scrolled {
+    position: fixed;
     top: 0;
     padding: 0;
+    width: calc(100% - 8rem);
   }
 }
 

@@ -2,6 +2,8 @@
 
 // Global DOM Variables
 
+const pageContainer = document.querySelector(".page-container");
+
 const tabs = document.querySelectorAll(".search__option-tab");
 const searchOptions = document.querySelector(".search__options");
 const propertySearchWidget = document.querySelector(
@@ -12,7 +14,7 @@ const navContainer = document.querySelector(".nav-container");
 const homepageHeader = document.querySelector(".homepage-header");
 
 const allSections = document.querySelectorAll("section");
-const sectionOne = document.querySelector(".section--1");
+const highlightsSection = document.querySelector(".highlights-section");
 
 const propertySlider = document.querySelector(".property-slider");
 const propertySliderLeftBtn = document.querySelector(
@@ -40,6 +42,7 @@ const testimonialsDotContainer = document.querySelector(
 
 const init = function () {
   // Functions on Page Load
+  resizingNav();
   homepageSlider();
   propertySliderMovement();
   testimonialsSlider();
@@ -57,23 +60,34 @@ const init = function () {
 //   const [entry] = entries;
 //   if (entry.isIntersecting) {
 //     navContainer.classList.add("nav-container--scrolled");
+//     console.log(`Page container intersecting.`);
 //   } else {
 //     navContainer.classList.remove("nav-container--scrolled");
+//     console.log(`Page container NOT intersecting.`);
 //   }
 // };
 
 // const navObserver = new IntersectionObserver(resizingNav, {
 //   root: null,
-//   threshold: 0.3,
+//   threshold: 0.7,
 // });
 
-// console.log(sectionOne);
-// navObserver.observe(sectionOne);
+// navObserver.observe(pageContainer);
+
+const resizingNav = function () {
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset >= 40) {
+      navContainer.classList.add("nav-container--scrolled");
+    } else {
+      navContainer.classList.remove("nav-container--scrolled");
+    }
+  });
+};
 
 // Section Reveal on Scroll
 
 const hideSections = function () {
-  if (window.scrollY > 40) {
+  if (window.pageYOffset > 40) {
     return;
   } else {
     allSections.forEach((section) =>
@@ -94,7 +108,7 @@ const revealSection = function (entries) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.25,
+  threshold: 0.15,
 });
 
 allSections.forEach((section) => sectionObserver.observe(section));
@@ -270,3 +284,7 @@ searchOptions.addEventListener("click", switchTabs);
 // Initialisation
 
 init();
+
+setInterval(function () {
+  console.log(window.pageYOffset);
+}, 1000);

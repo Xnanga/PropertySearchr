@@ -95,18 +95,17 @@ ul li::before {
   transform: translateY(150px); }
 
 .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
+  position: absolute;
   z-index: 20;
-  padding: 3rem;
-  transition: all 0.5s ease-out;
+  width: 100%;
+  transition: width 1s position 2s;
   top: 0;
-  padding: 0; }
+  padding: 3rem; }
   .nav-container--scrolled {
+    position: fixed;
     top: 0;
-    padding: 0; }
+    padding: 0;
+    width: calc(100% - 8rem); }
 
 .nav {
   height: 7rem;
@@ -446,6 +445,9 @@ button {
   list-style-type: square;
   line-height: 3;
   font-size: 1.75rem; }
+
+.page-container {
+  position: relative; }
 
 .main-content {
   position: relative; }
