@@ -64,12 +64,21 @@
     &__button {
       @include flexCentering;
 
+      position: relative;
+
       height: 100%;
 
       font-size: 1.5rem;
-      padding: 1rem;
+      font-weight: 700;
+
+      padding: 1rem 2rem;
 
       cursor: pointer;
+
+      &::after {
+        content: "\25bc";
+        padding-left: 0.25rem;
+      }
 
       &--1 {
         grid-column: 4 / 5;
@@ -97,10 +106,64 @@
 
       &--7 {
         grid-column: 10 / 11;
+
+        background-color: darken(#4d4d4d, 10%);
+
+        &:hover {
+          background-color: darken(#4d4d4d, 15%);
+        }
       }
 
       &--8 {
         grid-column: 11 / 12;
+
+        background-color: darken(#0099ff, 10%);
+
+        &:hover {
+          background-color: darken(#0099ff, 15%);
+        }
+      }
+
+      &:hover > .nav__list {
+        display: block;
+      }
+
+      &:hover > .nav__label {
+        color: var(--primary-color-cyan);
+      }
+
+      &--no-dropdown {
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  &__label {
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+
+    width: 20rem;
+
+    &-item {
+      background-color: var(--secondary-color-black);
+      padding: 2rem;
+
+      &:hover > &__label {
+        color: var(--primary-color-cyan);
+      }
+
+      &__label {
+      }
+
+      &::before {
+        content: "";
       }
     }
   }
