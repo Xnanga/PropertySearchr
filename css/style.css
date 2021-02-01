@@ -132,9 +132,12 @@ ul li::before {
       justify-content: center;
       grid-column: 1 / 2;
       background-color: var(--primary-color-cyan);
-      height: 100%;
       width: 100%;
+      height: 100%;
       cursor: pointer; }
+      .nav__branding-logo-img {
+        display: inline-block;
+        object-fit: contain; }
     .nav__branding-name {
       grid-column: 2 / 3;
       font-size: 3rem;
@@ -149,7 +152,8 @@ ul li::before {
     font-size: 1.5rem;
     font-weight: 700;
     padding: 1rem 2rem;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all 0.2s; }
     .nav__menu__button::after {
       content: "\25bc";
       padding-left: 0.25rem; }
@@ -167,14 +171,14 @@ ul li::before {
       grid-column: 9 / 10; }
     .nav__menu__button--7 {
       grid-column: 10 / 11;
-      background-color: #343434; }
+      background-color: var(--secondary-color-grey); }
       .nav__menu__button--7:hover {
-        background-color: #272727; }
+        background-color: #343434; }
     .nav__menu__button--8 {
       grid-column: 11 / 12;
-      background-color: #007acc; }
+      background-color: var(--primary-color-cyan); }
       .nav__menu__button--8:hover {
-        background-color: #006bb3; }
+        background-color: #007acc; }
     .nav__menu__button:hover > .nav__list {
       display: block; }
     .nav__menu__button:hover > .nav__label {
