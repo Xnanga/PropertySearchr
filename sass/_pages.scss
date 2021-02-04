@@ -8,6 +8,10 @@
 
   border-bottom: 2px solid var(--primary-color-cyan);
 
+  @media only screen and (max-width: $bp-smaller) {
+    height: 100vh;
+  }
+
   &__content {
     position: absolute;
     top: 4%;
@@ -16,18 +20,53 @@
 
     max-width: 65rem;
 
+    @media only screen and (max-width: $bp-small) {
+      left: 15%;
+      max-width: 55rem;
+    }
+
+    @media only screen and (max-width: $bp-smaller) {
+      left: 10%;
+      max-width: 50rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      left: 7.5%;
+      max-width: 40rem;
+    }
+
     &__h1 {
       font-size: 4.5rem;
       margin-bottom: 2rem;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 3.5rem;
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        font-size: 2.75rem;
+      }
     }
 
     &__tagline {
       font-size: 2rem;
       font-weight: 700;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 1.75rem;
+      }
+
+      // @media only screen and (max-width: $bp-smallest) {
+      //   font-size: 1.5rem;
+      // }
     }
 
     &__social-proof-logos {
       width: 120%;
+
+      @media only screen and (max-width: $bp-medium) {
+        display: none;
+      }
     }
   }
 

@@ -16,11 +16,14 @@
     top: 0;
     padding: 0;
     width: calc(100% - 8rem);
+
+    @media only screen and (max-width: $bp-smaller) {
+      width: 100%;
+    }
   }
 }
 
 .nav {
-  height: 7rem;
   width: 100%;
 
   display: grid;
@@ -80,6 +83,10 @@
 
       cursor: pointer;
       transition: all 0.2s;
+
+      @media only screen and (max-width: $bp-largest) {
+        display: none;
+      }
 
       &::after {
         content: "\25bc";
@@ -175,6 +182,14 @@
   }
 }
 
+// Mobile Navigation
+
+.mobile-nav {
+  @media only screen and (max-width: $bp-largest) {
+    display: block;
+  }
+}
+
 // Background Nav
 
 .background-nav {
@@ -244,18 +259,28 @@
     &__property {
       display: flex;
       align-items: baseline;
+      flex-wrap: wrap;
 
       & > .btn-cyan {
         margin-left: 1rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+          margin-top: 1rem;
+        }
       }
     }
 
     &__agent {
       display: flex;
       align-items: baseline;
+      flex-wrap: wrap;
 
       & > .btn-cyan {
         margin-left: 1rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+          margin-top: 1rem;
+        }
       }
     }
 
@@ -265,6 +290,10 @@
       padding-left: 1rem;
 
       font-size: 3rem;
+
+      @media only screen and (max-width: $bp-smallest) {
+        width: 40rem;
+      }
     }
   }
 }
@@ -275,7 +304,7 @@
   display: flex;
 
   &__input {
-    width: 60%;
+    width: 100%;
     height: 4rem;
     padding-left: 1rem;
     font-size: 3rem;
@@ -316,7 +345,7 @@
   justify-content: space-between;
 
   height: 25rem;
-  padding: 2rem;
+  padding: 2rem 0;
 
   &--1 {
   }
@@ -513,6 +542,15 @@
 
   background-color: var(--secondary-color-offwhite);
 
+  @media only screen and (max-width: $bp-large) {
+    width: 100%;
+    font-size: 2.75rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 2rem;
+  }
+
   &__join-message {
     grid-column: 1 / 4;
     grid-row: 1 / 4;
@@ -532,6 +570,8 @@
 
     background-color: var(--primary-color-cyan);
     color: var(--secondary-color-white);
+
+    padding: 2rem;
 
     z-index: 5;
   }
@@ -577,12 +617,20 @@
 
   background-color: var(--secondary-color-white);
 
-  width: 40%;
+  width: 50%;
   height: 100%;
   padding: 1rem;
   margin: 0 auto;
 
   font-size: 1.75rem;
+
+  @media only screen and (max-width: $bp-large) {
+    width: 70%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    width: 90%;
+  }
 
   &::before {
     content: "\201C";

@@ -1,4 +1,14 @@
-// Variables
+// SASS Variables
+
+// Breakpoints
+$bp-largest: 87.5em; // 1400px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 62.5em; // 1000px
+$bp-small: 50em; // 800px
+$bp-smaller: 40.625em; // 650px
+$bp-smallest: 31.25em; // 500px
+
+// CSS Variables
 
 :root {
   // Styles
@@ -24,6 +34,10 @@
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 55%;
+  }
 }
 
 body {
@@ -31,6 +45,10 @@ body {
   font-family: var(--default-font-style);
   color: var(--secondary-color-grey);
   margin: 4rem;
+
+  @media only screen and (max-width: $bp-smaller) {
+    margin: 0;
+  }
 }
 
 button {
@@ -74,6 +92,10 @@ h2 {
   font-size: 3.5rem;
   color: var(--secondary-color-grey);
   margin-bottom: 1rem;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 3rem;
+  }
 }
 
 p {
@@ -93,7 +115,7 @@ ul li::before {
 }
 
 .header-tagline {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin: 1.5rem 0;
   color: var(--secondary-color-grey);
 }
