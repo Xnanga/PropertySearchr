@@ -120,6 +120,10 @@ ul li::before {
   font-size: 2rem;
 }
 
+picture {
+  overflow: hidden;
+}
+
 .header-tagline {
   font-size: 1.75rem;
   margin: 1.5rem 0;

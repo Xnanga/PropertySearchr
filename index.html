@@ -5,13 +5,15 @@ Issues
 1. Logo in nav looks pixelated on mobile. X
 1.1. Favicon needs added. X
 1.2. Mobile browser theme needs added. X
-2. Size of homepage header changes when typing in postcode searcher. ---
+2. Size of homepage header changes when typing in postcode searcher.
 3. Our people section looks cramped on mobile. X
 4. Our people section button does not return to original size after pressed. X
 5. Property slider buttons do not work on mobile. 
 6. Circles for selecting testimonials are too small on all devices. X
 7. Images need set dimensions. X
 8. Jpegs need replaced with Webps.
+9. Find better way to keep homepage header centered above slider.
+
 
 -->
 
@@ -45,7 +47,6 @@ Issues
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
   </head>
-
   <body class="body">
     <div class="background-square"></div>
     <div class="background-nav">
@@ -215,32 +216,24 @@ Issues
           </div>
 
           <div class="homepage-header__slider">
-            <img
-              src="images/homepage/homepage-slide-1.jpg"
-              alt="#"
-              class="homepage-header__slide homepage-header__slide--active"
-              data-slide="1"
-              height="1270"
-              width="1920"
-            />
-
-            <img
-              src="images/homepage/homepage-slide-2.jpg"
-              alt="#"
-              class="homepage-header__slide"
-              data-slide="2"
-              height="1270"
-              width="1920"
-            />
-
-            <img
-              src="images/homepage/homepage-slide-3.jpg"
-              alt="#"
-              class="homepage-header__slide"
-              data-slide="3"
-              height="1270"
-              width="1920"
-            />
+            <picture class="homepage-header__slide homepage-header__slide--active" height="1270"
+            width="1920">
+              <source srcset="webp/homepage-slide-1.webp" type="image/webp">
+              <source srcset="images/homepage/homepage-slide-1.jpg" type="image/jpeg"> 
+              <img src="images/homepage/homepage-slide-1.jpg" alt="Property Slide One">
+            </picture>
+            <picture class="homepage-header__slide" height="1270"
+            width="1920">
+              <source srcset="webp/homepage-slide-2.webp" type="image/webp">
+              <source srcset="images/homepage/homepage-slide-2.jpg" type="image/jpeg"> 
+              <img src="images/homepage/homepage-slide-2.jpg" alt="Property Slide Two">
+            </picture>
+            <picture class="homepage-header__slide" height="1270"
+            width="1920">
+              <source srcset="webp/homepage-slide-3.webp" type="image/webp">
+              <source srcset="images/homepage/homepage-slide-3.jpg" type="image/jpeg"> 
+              <img src="images/homepage/homepage-slide-3.jpg" alt="Property Slide Three">
+            </picture>
           </div>
         </div>
         <section class="section highlights-section">
@@ -390,13 +383,21 @@ Issues
               <div class="property-slider__container">
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
+                    <!-- <img
                       src="images/homepage/property-slide-1.jpg"
                       alt="A property for let or sale"
                       class="property-card__img"
                       height="400"
                       width="640"
-                    />
+                    /> -->
+
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
+
+
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -424,11 +425,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -456,11 +457,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -488,11 +489,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -520,11 +521,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -552,11 +553,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -584,11 +585,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -616,11 +617,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -648,11 +649,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -680,11 +681,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -712,11 +713,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -744,11 +745,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -776,11 +777,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -808,11 +809,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -840,11 +841,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -872,11 +873,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -904,11 +905,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -936,11 +937,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -968,11 +969,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />
@@ -1000,11 +1001,11 @@ Issues
 
                 <div class="property-card">
                   <div class="property-card__img-container">
-                    <img
-                      src="images/homepage/property-slide-1.jpg"
-                      alt="A property for let or sale"
-                      class="property-card__img"
-                    />
+                    <picture class="property-card__img" height="400" width="640">
+                      <source srcset="webp/property-slide-1.webp" type="image/webp">
+                      <source srcset="images/homepage/property-slide-1.jpg" type="image/jpeg"> 
+                      <img src="images/homepage/property-slide-1.jpg" class="property-card__img" alt="Property Card Image One">
+                    </picture>
                     <div class="property-card__rooms-container">
                       <img class="property-card__icon" src="SVG/bed.svg" />
                       <img class="property-card__icon" src="SVG/bath.svg" />

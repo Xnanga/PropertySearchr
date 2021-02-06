@@ -102,6 +102,8 @@ const homepage = function () {
       ".homepage-header__slide"
     );
 
+    console.log(homepageHeroSlides);
+
     let currentSlide = 0;
     const maxSlide = homepageHeroSlides.length;
 
@@ -187,6 +189,7 @@ const homepage = function () {
     };
 
     propertySliderBTNContainer.addEventListener("click", slideHandler);
+    propertySliderBTNContainer.addEventListener("touchstart", slideHandler);
   };
 
   // Hide Testimonials on Load (Except First)

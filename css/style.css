@@ -84,6 +84,9 @@ ul li::before {
   /* Also needed for space (tweak if needed) */
   font-size: 2rem; }
 
+picture {
+  overflow: hidden; }
+
 .header-tagline {
   font-size: 1.75rem;
   margin: 1.5rem 0;
