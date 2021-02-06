@@ -1,10 +1,37 @@
+<!--
+Issues
+========
+
+1. Logo in nav looks pixelated on mobile. X
+1.1. Favicon needs added. X
+1.2. Mobile browser theme needs added. X
+2. Size of homepage header changes when typing in postcode searcher. ---
+3. Our people section looks cramped on mobile. X
+4. Our people section button does not return to original size after pressed. X
+5. Property slider buttons do not work on mobile. 
+6. Circles for selecting testimonials are too small on all devices.
+7. Images need set dimensions.
+8. Jpegs need replaced with Webps.
+
+
+-->
+
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0099ff" />
 
     <title>Buy Property Online UK | PropertySearchr</title>
     <meta name="description" content="Property Searchr" />
@@ -38,7 +65,7 @@
         <nav class="nav">
           <div class="nav__branding-logo">
             <img
-              src="images/homepage/logo-small.png"
+              src="images/homepage/logo.png"
               alt="PropertySearchr Logo"
               class="nav__branding-logo-img"
             />
@@ -206,7 +233,7 @@
             />
           </div>
         </div>
-        <section class="small-section highlights-section">
+        <section class="section highlights-section">
           <div class="highlights-section__container">
             <div class="highlights-section__text-content">
               <h2 class="h2-header">
@@ -261,7 +288,7 @@
             </div>
           </div>
         </section>
-        <section class="large-section people-section">
+        <section class="section people-section">
           <div class="people-section__content">
             <h2 class="h2-header">
               Why choose a
@@ -286,7 +313,7 @@
             </ul>
 
             <div class="people-section__search">
-              <h2 class="h2-header margin-bottom-small">
+              <h3 class="h3-header margin-bottom-small">
                 Your local agent will become your go-to property expert for
                 life.
               </h2>
@@ -311,7 +338,7 @@
             class="people-section__image"
           />
         </section>
-        <section class="small-section about-section">
+        <section class="section about-section">
           <div class="about-section__container">
             <h2 class="h2-header">
               About <span class="blue-text">PropertySearchr</span>
@@ -341,7 +368,7 @@
             <button class="btn-cyan">Why Choose PropertySearchr?</button>
           </div>
         </section>
-        <section class="large-section properties-section">
+        <section class="section properties-section">
           <div class="properties-section__container">
             <h2 class="h2-header">
               Recent <span class="blue-text">Properties</span>
@@ -1011,7 +1038,7 @@
             </div>
           </div>
         </section>
-        <section class="large-section join-us-section">
+        <section class="section join-us-section">
           <div class="join-us-section__container">
             <div class="join-us-grid">
               <div class="join-us-grid__join-message">
@@ -1036,7 +1063,7 @@
             </div>
           </div>
         </section>
-        <section class="small-section testimonials-section">
+        <section class="section testimonials-section">
           <div class="testimonials-section__container">
             <div class="testimonials-slider">
               <div class="testimonials-slider__box">

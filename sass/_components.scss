@@ -43,18 +43,20 @@
     &-logo {
       @include flexCentering;
 
+      height: 100%;
+      width: 8.8rem;
+
+      padding: 0.5rem;
+
       grid-column: 1 / 2;
 
       background-color: var(--primary-color-cyan);
-      width: 100%;
-      height: 100%;
 
       cursor: pointer;
 
       &-img {
-        display: inline-block;
-
-        object-fit: contain;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -228,8 +230,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 17.18rem;
-  height: 14.18rem;
+  width: 15.8rem;
+  height: 15.8rem;
   background-color: var(--primary-color-cyan);
 }
 
@@ -334,10 +336,6 @@
     font-size: 2rem;
 
     width: 30%;
-
-    &:hover {
-      transform: scale(1.1);
-    }
 
     &:active {
       transform: scale(0.95);
@@ -769,10 +767,13 @@ button {
   font-size: 1.75rem;
 
   @media only screen and (max-width: $bp-small) {
-    line-height: 2;
+    line-height: 1.5;
   }
 
   &__item {
+    @media only screen and (max-width: $bp-small) {
+      padding: 1rem 0;
+    }
   }
 }
 

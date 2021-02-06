@@ -91,11 +91,17 @@ h1 {
 h2 {
   font-size: 3.5rem;
   color: var(--secondary-color-grey);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
   @media only screen and (max-width: $bp-small) {
     font-size: 3rem;
   }
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--secondary-color-grey);
+  margin-bottom: 1rem;
 }
 
 p {
