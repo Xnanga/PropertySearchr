@@ -102,8 +102,6 @@ const homepage = function () {
       ".homepage-header__slide"
     );
 
-    console.log(homepageHeroSlides);
-
     let currentSlide = 0;
     const maxSlide = homepageHeroSlides.length;
 
@@ -134,9 +132,6 @@ const homepage = function () {
 
     // Returns how many groups of property cards there should be visible (Doesn't work)
     let maxIndex = sliderWidthPerCard / 20.49 - 2;
-
-    console.log(`SliderWidthPerCard: ${sliderWidthPerCard}`);
-    console.log(`MaxIndex: ${maxIndex}`);
 
     // Could the intersectionObserver API be used to count how many cards are visible
     // then determine the maxIndex through propertySliderCards.length / number of visible cards?
@@ -188,8 +183,12 @@ const homepage = function () {
       }
     };
 
-    propertySliderBTNContainer.addEventListener("click", slideHandler);
-    propertySliderBTNContainer.addEventListener("touchstart", slideHandler);
+    propertySliderBTNContainer.addEventListener("click", slideHandler, {
+      passive: true,
+    });
+    propertySliderBTNContainer.addEventListener("touchstart", slideHandler, {
+      passive: true,
+    });
   };
 
   // Hide Testimonials on Load (Except First)
