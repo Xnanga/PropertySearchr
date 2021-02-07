@@ -14,6 +14,9 @@ const homepage = function () {
   const navContainer = document.querySelector(".nav-container");
   const homepageHeader = document.querySelector(".homepage-header");
 
+  const mobileNavButton = document.querySelector(".nav__menu__button--mobile");
+  const mobileNavDrawer = document.querySelector(".mobile-nav");
+
   const allSections = document.querySelectorAll("section");
   const highlightsSection = document.querySelector(".highlights-section");
 
@@ -65,6 +68,22 @@ const homepage = function () {
       }
     });
   };
+
+  // Reveal & Remove Mobile Nav
+
+  const handleMobileNav = function (e) {
+    const clickedElement = e.target;
+    const isClickInside = mobileNavDrawer.contains(clickedElement);
+
+    if (clickedElement === mobileNavButton) {
+      mobileNavDrawer.classList.add("mobile-nav--active");
+    } else if (!isClickInside) {
+      mobileNavDrawer.classList.remove("mobile-nav--active");
+    }
+  };
+
+  mobileNavButton.addEventListener("click", handleMobileNav);
+  pageContainer.addEventListener("click", handleMobileNav);
 
   // Section Reveal on Scroll
 
