@@ -45,6 +45,7 @@ const homepage = function () {
   // Init Function
 
   const init = function () {
+    resizingHomepageHeader();
     resizingNav();
     homepageSlider();
     propertySliderMovement();
@@ -57,6 +58,25 @@ const homepage = function () {
     searchOptions.addEventListener("click", switchTabs);
   };
 
+  // Test if Device is Mobile
+
+  const testMobile = function () {
+    let isMobile;
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      isMobile = true;
+    } else {
+      isMobile = false;
+    }
+    return isMobile;
+  };
+
+  const isMobile = testMobile();
+
   // Resize Nav on Scroll
 
   const resizingNav = function () {
@@ -67,6 +87,14 @@ const homepage = function () {
         navContainer.classList.remove("nav-container--scrolled");
       }
     });
+  };
+
+  // Resize Homepage Header on Mobile to Work with Screen Keyboards
+
+  const resizingHomepageHeader = function () {
+    if (isMobile === true) {
+      homepageHeader.style.height = `${homepageHeader.height}px`;
+    }
   };
 
   // Reveal & Remove Mobile Nav
