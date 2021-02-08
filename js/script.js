@@ -170,18 +170,21 @@ const homepage = function () {
     const slideTimer = setInterval(nextSlide, 6000);
   };
 
-  // Property Card Slider
+  // Property Card Slider (Limit of 18 Items)
 
   const propertySliderMovement = function () {
     let index = 0;
     let sliderWidth = propertySlider.offsetWidth;
-    let sliderWidthPerCard = sliderWidth / propertySliderCards.length;
 
-    // Returns how many groups of property cards there should be visible (Doesn't work)
-    let maxIndex = sliderWidthPerCard / 20.49 - 2;
+    const computeMaxIndex = function (visibleSlides) {
+      if (visibleSlides === 1) return 17;
+      if (visibleSlides === 2) return 8;
+      if (visibleSlides === 3) return 5;
+      if (visibleSlides === 4) return 4;
+      if (visibleSlides === 6) return 2;
+    };
 
-    // Could the intersectionObserver API be used to count how many cards are visible
-    // then determine the maxIndex through propertySliderCards.length / number of visible cards?
+    let maxIndex = computeMaxIndex(determineMaxSlide());
 
     window.addEventListener("resize", () => {
       sliderWidth = propertySlider.offsetWidth;
@@ -206,7 +209,6 @@ const homepage = function () {
         index++;
       }
       goToSlide(index, "next");
-      console.log(`Index: ${index}`);
     };
 
     const prevSlide = function () {
@@ -216,7 +218,6 @@ const homepage = function () {
         index--;
       }
       goToSlide(index, "prev");
-      console.log(`Index: ${index}`);
     };
 
     const slideHandler = function (direction) {
@@ -233,9 +234,23 @@ const homepage = function () {
     propertySliderBTNContainer.addEventListener("click", slideHandler, {
       passive: true,
     });
-    propertySliderBTNContainer.addEventListener("touchstart", slideHandler, {
-      passive: true,
+
+    window.addEventListener("resize", function () {
+      maxIndex = computeMaxIndex(determineMaxSlide());
     });
+  };
+
+  // Determine Max Slide Index for Property Slider
+
+  const determineMaxSlide = function () {
+    const viewportBreakpoints = [500, 650, 800, 1000, 1100, 1400, 1800];
+    const currentWindowWidth = window.innerWidth;
+
+    if (currentWindowWidth <= viewportBreakpoints[2]) return 1;
+    if (currentWindowWidth <= viewportBreakpoints[3]) return 2;
+    if (currentWindowWidth <= viewportBreakpoints[5]) return 3;
+    if (currentWindowWidth <= viewportBreakpoints[6]) return 4;
+    if (currentWindowWidth >= viewportBreakpoints[6]) return 6;
   };
 
   // Hide Testimonials on Load (Except First)
