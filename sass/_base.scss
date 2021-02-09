@@ -125,6 +125,14 @@ picture {
   overflow: hidden;
 }
 
+.no-js {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  padding: 0 !important;
+}
+
 .header-tagline {
   font-size: 1.75rem;
   margin: 1.5rem 0;

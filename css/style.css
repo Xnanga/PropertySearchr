@@ -87,6 +87,13 @@ ul li::before {
 picture {
   overflow: hidden; }
 
+.no-js {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  padding: 0 !important; }
+
 .header-tagline {
   font-size: 1.75rem;
   margin: 1.5rem 0;
@@ -119,14 +126,14 @@ picture {
   position: absolute;
   z-index: 20;
   width: 100%;
-  transition: width 1s position 2s;
   top: 0;
   padding: 3rem; }
   .nav-container--scrolled {
     position: fixed;
     top: 0;
     padding: 0;
-    width: calc(100% - 8rem); }
+    width: calc(100% - 8rem);
+    opacity: 0.9; }
     @media only screen and (max-width: 40.625em) {
       .nav-container--scrolled {
         width: 100%; } }
@@ -333,7 +340,11 @@ picture {
         margin-left: 1rem; }
         @media only screen and (max-width: 31.25em) {
           .search__widget__property > .btn-cyan {
-            margin-top: 1rem; } }
+            margin-top: 1rem;
+            margin-left: 0; } }
+      @media only screen and (max-width: 31.25em) {
+        .search__widget__property > :last-child {
+          margin-left: 1rem; } }
     .search__widget__agent {
       display: flex;
       align-items: baseline;

@@ -6,8 +6,6 @@
 
   width: 100%;
 
-  transition: width 1s position 2s;
-
   top: 0;
   padding: 3rem;
 
@@ -16,6 +14,7 @@
     top: 0;
     padding: 0;
     width: calc(100% - 8rem);
+    opacity: 0.9;
 
     @media only screen and (max-width: $bp-smaller) {
       width: 100%;
@@ -363,6 +362,12 @@
 
         @media only screen and (max-width: $bp-smallest) {
           margin-top: 1rem;
+          margin-left: 0;
+        }
+      }
+      @media only screen and (max-width: $bp-smallest) {
+        & > :last-child {
+          margin-left: 1rem;
         }
       }
     }

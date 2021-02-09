@@ -42,12 +42,102 @@ const homepage = function () {
     ".testimonials-slider__dots"
   );
 
+  // Property Objects
+
+  function Property(
+    status,
+    address,
+    jpegImage,
+    webpImage,
+    bathrooms,
+    bedrooms,
+    price,
+    type
+  ) {
+    (this.status = status),
+      (this.address = address),
+      (this.jpegImage = jpegImage),
+      (this.webpImage = webpImage),
+      (this.bathrooms = bathrooms),
+      (this.bedrooms = bedrooms),
+      (this.price = price),
+      (this.type = type);
+  }
+
+  const propertyOne = new Property(
+    "For Sale",
+    "Brunswick St, Glasgow",
+    "images/homepage/property-slide-1.jpg",
+    "webp/property-slide-1.webp",
+    1,
+    2,
+    "£250,000 Offers Over",
+    "Apartment"
+  );
+
+  const propertyTwo = new Property(
+    "For Sale",
+    "Brunswick St, Glasgow",
+    "images/homepage/property-slide-1.jpg",
+    "webp/property-slide-1.webp",
+    1,
+    2,
+    "£250,000 Offers Over",
+    "Apartment"
+  );
+
+  const propertyThree = new Property(
+    "For Sale",
+    "Brunswick St, Glasgow",
+    "images/homepage/property-slide-1.jpg",
+    "webp/property-slide-1.webp",
+    1,
+    2,
+    "£250,000 Offers Over",
+    "Apartment"
+  );
+
+  const propertyFour = new Property(
+    "For Sale",
+    "Brunswick St, Glasgow",
+    "images/homepage/property-slide-1.jpg",
+    "webp/property-slide-1.webp",
+    1,
+    2,
+    "£250,000 Offers Over",
+    "Apartment"
+  );
+
+  const propertyFive = new Property(
+    "For Sale",
+    "Brunswick St, Glasgow",
+    "images/homepage/property-slide-1.jpg",
+    "webp/property-slide-1.webp",
+    1,
+    2,
+    "£250,000 Offers Over",
+    "Apartment"
+  );
+
+  const propertySix = new Property(
+    "For Sale",
+    "Brunswick St, Glasgow",
+    "images/homepage/property-slide-1.jpg",
+    "webp/property-slide-1.webp",
+    1,
+    2,
+    "£250,000 Offers Over",
+    "Apartment"
+  );
+
   // Init Function
 
   const init = function () {
+    removeNoJS();
     resizingHomepageHeader();
     resizingNav();
     homepageSlider();
+    propertySliderPopulate();
     propertySliderMovement();
     testimonialsSlider();
     manageTabs("1");
@@ -56,6 +146,16 @@ const homepage = function () {
 
     tabs[0].classList.add("search__option-tab--active");
     searchOptions.addEventListener("click", switchTabs);
+  };
+
+  // Remove no-js Class
+
+  const removeNoJS = function () {
+    const allElements = document.querySelectorAll(".no-js");
+
+    for (i = 0; i < allElements.length; i++) {
+      allElements[i].classList.remove("no-js");
+    }
   };
 
   // Test if Device is Mobile
@@ -76,6 +176,12 @@ const homepage = function () {
   };
 
   const isMobile = testMobile();
+
+  // Generate Random Numbers Between Ranges
+
+  const generateRandomNumber = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
 
   // Resize Nav on Scroll
 
@@ -172,6 +278,58 @@ const homepage = function () {
 
   // Property Card Slider (Limit of 18 Items)
 
+  const propertySliderPopulate = function () {
+    const allProperties = [
+      propertyOne,
+      propertyTwo,
+      propertyThree,
+      propertyFour,
+      propertyFive,
+      propertySix,
+    ];
+
+    for (i = 1; i <= 18; i++) {
+      let propertyNum = generateRandomNumber(0, 5);
+      propertySliderContainer.insertAdjacentHTML(
+        "beforeend",
+        `<div class="property-card">
+      <div class="property-card__img-container">
+  
+        <picture class="property-card__img">
+          <source srcset="${allProperties[propertyNum].webpImage}" type="image/webp">
+          <source srcset="${allProperties[propertyNum].jpegImage}" type="image/jpeg"> 
+          <img src="${allProperties[propertyNum].jpegImage}" class="property-card__img" alt="Property Card Image ${propertyNum}" height="200" width="310" loading="lazy">
+        </picture>
+  
+  
+        <div class="property-card__rooms-container">
+          <img class="property-card__icon" src="SVG/bed.svg" />
+          <img class="property-card__icon" src="SVG/bath.svg" />
+          <span class="property-card__number">${allProperties[propertyNum].bedrooms}</span>
+          <span class="property-card__number">${allProperties[propertyNum].bathrooms}</span>
+        </div>
+      </div>
+      <div class="property-card__info">
+        <span class="span-text">${allProperties[propertyNum].bedrooms} Bed ${allProperties[propertyNum].type}</span>
+        <span class="property-status-text">${allProperties[propertyNum].status}</span>
+        <span class="span-text"
+          ><strong>${allProperties[propertyNum].address}</strong></span
+        >
+        <span class="span-text">${allProperties[propertyNum].price}</span>
+      </div>
+      <div class="property-card__action-bar">
+        <div class="property-card__action-bar__icon">
+          <img class="property-card__icon" src="SVG/heart.svg" />
+        </div>
+        <div class="property-card__action-bar__more-details">
+          MORE DETAILS >
+        </div>
+      </div>
+    </div>`
+      );
+    }
+  };
+
   const propertySliderMovement = function () {
     let index = 0;
     let sliderWidth = propertySlider.offsetWidth;
@@ -237,6 +395,8 @@ const homepage = function () {
 
     window.addEventListener("resize", function () {
       maxIndex = computeMaxIndex(determineMaxSlide());
+      index = 0;
+      propertySliderContainer.style.transform = `translateX(0)`;
     });
   };
 
