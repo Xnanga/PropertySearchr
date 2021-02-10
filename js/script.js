@@ -18,7 +18,6 @@ const homepage = function () {
   const mobileNavDrawer = document.querySelector(".mobile-nav");
 
   const allSections = document.querySelectorAll("section");
-  const highlightsSection = document.querySelector(".highlights-section");
 
   const propertySlider = document.querySelector(".property-slider");
   const propertySliderLeftBtn = document.querySelector(
@@ -27,7 +26,7 @@ const homepage = function () {
   const propertySliderRightBtn = document.querySelector(
     ".property-slider__btn--right"
   );
-  const propertySliderCards = document.querySelectorAll(".property-card");
+
   const propertySliderContainer = document.querySelector(
     ".property-slider__container"
   );
@@ -71,63 +70,63 @@ const homepage = function () {
     "webp/property-slide-1.webp",
     1,
     2,
-    "£250,000 Offers Over",
+    "£120,000 Offers Over",
     "Apartment"
   );
 
   const propertyTwo = new Property(
-    "For Sale",
-    "Brunswick St, Glasgow",
-    "images/homepage/property-slide-1.jpg",
-    "webp/property-slide-1.webp",
-    1,
+    "For Let",
+    "Loch Gardens, Livingston",
+    "images/homepage/property-slide-2.jpg",
+    "webp/property-slide-2.webp",
     2,
-    "£250,000 Offers Over",
-    "Apartment"
+    1,
+    "£900 PCM",
+    "Semi-Detached"
   );
 
   const propertyThree = new Property(
     "For Sale",
-    "Brunswick St, Glasgow",
-    "images/homepage/property-slide-1.jpg",
-    "webp/property-slide-1.webp",
-    1,
+    "Newton Terrace, Edinburgh",
+    "images/homepage/property-slide-3.jpg",
+    "webp/property-slide-3.webp",
     2,
-    "£250,000 Offers Over",
-    "Apartment"
+    3,
+    "£330,000 Offers Over",
+    "Bungalow"
   );
 
   const propertyFour = new Property(
     "For Sale",
-    "Brunswick St, Glasgow",
-    "images/homepage/property-slide-1.jpg",
-    "webp/property-slide-1.webp",
+    "Foresthill Acre, Gretna",
+    "images/homepage/property-slide-4.jpg",
+    "webp/property-slide-4.webp",
     1,
-    2,
-    "£250,000 Offers Over",
+    3,
+    "£130,000 Offers Over",
     "Apartment"
   );
 
   const propertyFive = new Property(
-    "For Sale",
-    "Brunswick St, Glasgow",
-    "images/homepage/property-slide-1.jpg",
-    "webp/property-slide-1.webp",
-    1,
+    "For Let",
+    "Cooper Street, Aberdeen",
+    "images/homepage/property-slide-5.jpg",
+    "webp/property-slide-5.webp",
     2,
-    "£250,000 Offers Over",
+    4,
+    "£1500 PCM",
     "Apartment"
   );
 
   const propertySix = new Property(
-    "For Sale",
-    "Brunswick St, Glasgow",
-    "images/homepage/property-slide-1.jpg",
-    "webp/property-slide-1.webp",
-    1,
+    "For Let",
+    "Yeardley Place, Glasgow",
+    "images/homepage/property-slide-6.jpg",
+    "webp/property-slide-6.webp",
     2,
-    "£250,000 Offers Over",
-    "Apartment"
+    3,
+    "£2200 PCM",
+    "Penthouse"
   );
 
   // Init Function
@@ -303,8 +302,8 @@ const homepage = function () {
   
   
         <div class="property-card__rooms-container">
-          <img class="property-card__icon" src="SVG/bed.svg" />
-          <img class="property-card__icon" src="SVG/bath.svg" />
+          <img class="property-card__icon" src="SVG/bed.svg" alt="Bed Icon" />
+          <img class="property-card__icon" src="SVG/bath.svg" alt="Bath Icon" />
           <span class="property-card__number">${allProperties[propertyNum].bedrooms}</span>
           <span class="property-card__number">${allProperties[propertyNum].bathrooms}</span>
         </div>
@@ -319,7 +318,7 @@ const homepage = function () {
       </div>
       <div class="property-card__action-bar">
         <div class="property-card__action-bar__icon">
-          <img class="property-card__icon" src="SVG/heart.svg" />
+          <img class="property-card__icon" src="SVG/heart.svg" alt="Heart Icon" />
         </div>
         <div class="property-card__action-bar__more-details">
           MORE DETAILS >

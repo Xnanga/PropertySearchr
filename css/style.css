@@ -284,7 +284,7 @@ picture {
         .mobile-nav__button--branding {
           margin: 0;
           margin-bottom: 1rem;
-          padding: 1rem;
+          padding: 2rem;
           border-bottom: none;
           text-align: center;
           font-weight: 700;
@@ -949,7 +949,7 @@ button {
 
 .homepage-header {
   position: relative;
-  height: 90vh;
+  height: 95vh;
   overflow: hidden;
   background-color: var(--secondary-color-black);
   color: var(--secondary-color-white);
